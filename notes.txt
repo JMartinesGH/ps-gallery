@@ -1,0 +1,34 @@
+Header
+    project name
+    nav
+        sort
+            date active
+        filter
+            tag source org
+    gallery (display 4 initially)
+        div or table
+            image
+            description
+            tag
+            date
+        Pagination
+            lazy load or pagination
+    
+        
+Build Instructions(READ ME)
+Extra Credit
+    Polymer
+    Responsive
+    filter
+    Sorting
+    single page app
+    unit tests(probably not me)
+
+
+functions
+    sort
+    filter
+events
+    select on change
+    tag clicked
+    image clicked
