@@ -5,14 +5,14 @@ Header
             date active
         filter
             tag source org
-    gallery (display 4 initially)
-        div or table
-            image
-            description
-            tag
-            date
-        Pagination
-            lazy load or pagination
+gallery (display 4 initially)
+    div or table
+        image
+        description
+        tag
+        date
+    Pagination
+        lazy load or pagination
     
         
 Build Instructions(READ ME)
