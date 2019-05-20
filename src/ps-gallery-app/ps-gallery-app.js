@@ -14,7 +14,6 @@ class PsGalleryApp extends PolymerElement {
           display: block;
         }
       </style>
-      <h2>Hello [[prop1]]!</h2>
       <ps-header></ps-header>
       <ps-gallery></ps-gallery>
     `;

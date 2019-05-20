@@ -1,14 +1,24 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 
+
 class psHeader extends PolymerElement {
     static get template() {
         return html`
-            <h1>Header</h1>
-        `;
+      <style>
+        :host {
+          display: block;
+        }
+      </style>
+      <h2>PS Gallery</h2>
+      <div>
+        filter
+      </div>
+      <div>
+        sort
+      </div>
+    `;
     }
-    constructor() {
-        super();
-    }
+    
 }
 
 customElements.define('ps-header', psHeader);
