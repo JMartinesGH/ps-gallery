@@ -1,0 +1,7 @@
+{
+  "name": "ps-gallery",
+  "short_name": "ps-gallery",
+  "description": "Programming Test for PS",
+  "start_url": "/",
+  "display": "standalone"
+}
