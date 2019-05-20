@@ -10,7 +10,6 @@ class psGallery extends PolymerElement {
                 :host {
                     display: inline-block;
                     font-family: Helvetica, Arial, sans-serif;
-                    text-align:center;
                 }
                 .container{
                     margin: 0 auto;
@@ -30,26 +29,32 @@ class psGallery extends PolymerElement {
                     vertical-align: top;
                     margin: 20px;
                     box-shadow: 0px 2px 5px grey;
+                    border-top: 5px solid red;
                 }
                 figure p{
                     margin: 10px 15px 20px;
                     text-align: left;
                 }
-                figure span{
+                figure span,
+                span.tag{
                     color: white;
-                    background: #666;
+                    background: #ccc;
                     border-radius: 15px;
                     padding: 5px;
                 }
             </style>
-            <h1>Gallery</h1>
+            <iron-ajax auto
+            url="http://gsx2json.com/api?id=1wZa0Gx2yAFDyMVayzRn428SDXCOJHOL-0_IX9uLiWW0"
+            params="{}"
+            handle-as="json"
+            last-response="{{ajaxResponse}}"
+            ></iron-ajax>
             <div class='container'>
-                <iron-ajax auto
-                    url="http://gsx2json.com/api?id=1wZa0Gx2yAFDyMVayzRn428SDXCOJHOL-0_IX9uLiWW0"
-                    params="{}"
-                    handle-as="json"
-                    last-response="{{ajaxResponse}}"
-                    ></iron-ajax>
+                <template is="dom-repeat" items="[[ajaxResponse.columns.tag]]" index-as='j'>
+                    <span class='tag'>[[item]]</span>
+                </template>
+            </div>
+            <div class='container'>
                 <template is="dom-repeat" items="[[ajaxResponse.rows]]" index-as='i'>
                     <figure>
                         <img src="[[item.image]]" alt="[[item.description]]" onclick="zoom(this)" onerror="this.onerror=null;this.src='https://placekitten.com/350/280';">
