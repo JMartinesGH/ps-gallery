@@ -9,12 +9,14 @@ class psGallery extends PolymerElement {
             <style>
                 :host {
                     display: inline-block;
-
+                    font-family: Helvetica, Arial, sans-serif;
+                    text-align:center;
                 }
                 .container{
                     margin: 0 auto;
                     max-width: 1400px;
                     box-sizing: border-box;
+                    text-align: center;
                 }
                 img{
                     width: 100%;
@@ -27,10 +29,11 @@ class psGallery extends PolymerElement {
                     min-height: 400px;
                     vertical-align: top;
                     margin: 20px;
-                    box-shadow: 2px 2px 5px grey;
+                    box-shadow: 0px 2px 5px grey;
                 }
                 figure p{
-                    margin: 10px 15px;
+                    margin: 10px 15px 20px;
+                    text-align: left;
                 }
                 figure span{
                     color: white;
@@ -48,12 +51,16 @@ class psGallery extends PolymerElement {
                     last-response="{{ajaxResponse}}"
                     ></iron-ajax>
                 <template is="dom-repeat" items="[[ajaxResponse.rows]]" index-as='i'>
-                        <figure>
-                            <img src="[[item.image]]" alt="[[item.description]]" onerror="this.onerror=null;this.src='https://placekitten.com/350/280';">
-                            <p>[[item.description]]</p>
-                            <p><span>[[item.tag]]</span></p>
-                        </figure>
-                    </template>
+                    <figure>
+                        <img src="[[item.image]]" alt="[[item.description]]" onclick="zoom(this)" onerror="this.onerror=null;this.src='https://placekitten.com/350/280';">
+                        <p>[[item.description]]</p>
+                        <p>
+                            <template is="dom-repeat" items="[[splitTags(item.tag)]]">
+                                <span>[[item]]</span>
+                            </template>
+                        </p>
+                    </figure>
+                </template>
             </div>
         `;
     }
@@ -68,8 +75,9 @@ class psGallery extends PolymerElement {
     //         }
     //     };
     // }
-    hasRows(item,index){
-        return item.rows[index];
+    splitTags(string){
+        let arr = string.split('|');
+        return arr;
     }
     constructor(){
         super();

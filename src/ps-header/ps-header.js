@@ -7,6 +7,7 @@ class psHeader extends PolymerElement {
       <style>
         :host {
           display: block;
+          font-family: Helvetica, Arial, sans-serif;
         }
       </style>
       <h2>PS Gallery</h2>
