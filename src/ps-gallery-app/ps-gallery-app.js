@@ -1,4 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import '../ps-header/ps-header.js';
+import '../ps-gallery/ps-gallery.js';
 
 /**
  * @customElement
@@ -13,6 +15,8 @@ class PsGalleryApp extends PolymerElement {
         }
       </style>
       <h2>Hello [[prop1]]!</h2>
+      <ps-header></ps-header>
+      <ps-gallery></ps-gallery>
     `;
   }
   static get properties() {
