@@ -15,6 +15,7 @@ class PsFigure extends PolymerElement {
             width: 100%;
             height: 280px;
             object-fit: cover;
+            cursor: pointer;
         }
         figure{
             display: inline-block;
