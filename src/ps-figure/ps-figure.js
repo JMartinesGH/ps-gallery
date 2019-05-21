@@ -41,7 +41,7 @@ class PsFigure extends PolymerElement {
             cursor: pointer;
         }
         </style>
-        <figure>
+        <figure data-tags$="{{tagString(item.tag)}}">
             <img src="[[item.image]]" alt="[[item.description]]" onclick="zoom(this)" onerror="this.onerror=null;this.src='https://placekitten.com/350/280';">
             <p>[[item.description]]</p>
             <p>
@@ -62,6 +62,11 @@ class PsFigure extends PolymerElement {
     splitTags(string) {
         let arr = string.split('|');
         return arr;
+    }
+    tagString(string){
+        let arr = string.split('|');
+        let newString = arr.toString();
+        return newString;
     }
 }
 
