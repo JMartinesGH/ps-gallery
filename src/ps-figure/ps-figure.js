@@ -46,7 +46,7 @@ class PsFigure extends PolymerElement {
             <p>[[item.description]]</p>
             <p>
                 <template is="dom-repeat" items="[[splitTags(item.tag)]]">
-                    <span class="tag" onclick="filterByTags(this)" data-tag="[[item]]">[[item]]</span>
+                    <span class="tag" onclick="filterByTags(this)">[[item]]</span>
                 </template>
             </p>
         </figure>
@@ -58,6 +58,10 @@ class PsFigure extends PolymerElement {
                 type: Array
             }
         };
+    }
+    splitTags(string) {
+        let arr = string.split('|');
+        return arr;
     }
 }
 

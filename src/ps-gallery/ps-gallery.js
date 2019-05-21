@@ -60,10 +60,6 @@ class psGallery extends PolymerElement {
     //         }
     //     };
     // }
-    splitTags(string){
-        let arr = string.split('|');
-        return arr;
-    }
     uniqueTags(array){
         let uniques = new Set(array);
         let uniqArr = [...uniques];
