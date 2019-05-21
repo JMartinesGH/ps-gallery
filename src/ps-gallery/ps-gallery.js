@@ -1,6 +1,7 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '@polymer/polymer/lib/elements/dom-repeat.js';
 import '@polymer/iron-ajax/iron-ajax.js';
+import '../ps-figure/ps-figure.js';
 
 
 class psGallery extends PolymerElement {
@@ -12,30 +13,12 @@ class psGallery extends PolymerElement {
                     font-family: Helvetica, Arial, sans-serif;
                 }
                 .container{
+                    min-width: 100%;
                     margin: 0 auto;
                     max-width: 1400px;
                     box-sizing: border-box;
                     text-align: center;
                 }
-                img{
-                    width: 100%;
-                    height: 280px;
-                    object-fit: cover;
-                }
-                figure{
-                    display: inline-block;
-                    width: 360px;
-                    min-height: 400px;
-                    vertical-align: top;
-                    margin: 20px;
-                    box-shadow: 0px 2px 5px grey;
-                    border-top: 5px solid #ff5200;
-                }
-                figure p{
-                    margin: 10px 15px 20px;
-                    text-align: left;
-                }
-                figure span,
                 span.tag{
                     color: white;
                     background: #ccc;
@@ -61,15 +44,7 @@ class psGallery extends PolymerElement {
             </div>
             <div class='container'>
                 <template is="dom-repeat" items="[[ajaxResponse.rows]]" index-as='i'>
-                    <figure>
-                        <img src="[[item.image]]" alt="[[item.description]]" onclick="zoom(this)" onerror="this.onerror=null;this.src='https://placekitten.com/350/280';">
-                        <p>[[item.description]]</p>
-                        <p>
-                            <template is="dom-repeat" items="[[splitTags(item.tag)]]">
-                                <span class="tag" onclick="filterByTags(this)" data-tag="[[item]]">[[item]]</span>
-                            </template>
-                        </p>
-                    </figure>
+                    <ps-figure item='[[item]]'></ps-figure>
                 </template>
             </div>
         `;
