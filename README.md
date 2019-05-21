@@ -29,5 +29,4 @@ $ polymer serve build/default
 2. sort by ascending and descending
 3. figure out how to filter by tag, need to get my head around data-binding a bit
 4. write better optimized javascript and incorporate more events with Polymer
-5. write smaller elements to limit the scope to the proper elements
 

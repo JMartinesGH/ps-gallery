@@ -37,9 +37,9 @@ class psGallery extends PolymerElement {
             last-response="{{ajaxResponse}}"
             ></iron-ajax>
             <div class='container'>
-                    <span class='tag' onclick="filterByTags">All</span>
+                    <span class='tag' onclick="filterByTags('All')">All</span>
                 <template is="dom-repeat" items="[[uniqueTags(ajaxResponse.columns.tag)]]" index-as='j'>
-                    <span class='tag' onclick="filterByTags(this)">[[item]]</span>
+                    <span class='tag' onclick="filterByTags([[item]])">[[item]]</span>
                 </template>
             </div>
             <div class='container'>

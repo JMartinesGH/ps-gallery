@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
         let el = document.querySelector('.overlay');
         el.parentNode.removeChild(el);
     }
-    filterByTags = function(){
-        console.log('tag clicked');
+    filterByTags = function(string){
+        console.log(string+' tag clicked');
     }
 });
     

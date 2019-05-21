@@ -47,7 +47,7 @@ class PsFigure extends PolymerElement {
             <p>[[item.description]]</p>
             <p>
                 <template is="dom-repeat" items="[[splitTags(item.tag)]]">
-                    <span class="tag" onclick="filterByTags(this)">[[item]]</span>
+                    <span class="tag" onclick="filterByTags([[item]])">[[item]]</span>
                 </template>
             </p>
         </figure>
