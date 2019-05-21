@@ -29,7 +29,7 @@ class psGallery extends PolymerElement {
                     vertical-align: top;
                     margin: 20px;
                     box-shadow: 0px 2px 5px grey;
-                    border-top: 5px solid red;
+                    border-top: 5px solid #ff5200;
                 }
                 figure p{
                     margin: 10px 15px 20px;
@@ -42,6 +42,10 @@ class psGallery extends PolymerElement {
                     border-radius: 15px;
                     padding: 5px;
                 }
+                span.tag:hover{
+                    background: #ff5200;
+                    cursor: pointer;
+                }
             </style>
             <iron-ajax auto
             url="http://gsx2json.com/api?id=1wZa0Gx2yAFDyMVayzRn428SDXCOJHOL-0_IX9uLiWW0"
@@ -50,7 +54,7 @@ class psGallery extends PolymerElement {
             last-response="{{ajaxResponse}}"
             ></iron-ajax>
             <div class='container'>
-                <template is="dom-repeat" items="[[ajaxResponse.columns.tag]]" index-as='j'>
+                <template is="dom-repeat" items="[[uniqueTags(ajaxResponse.columns.tag)]]" index-as='j'>
                     <span class='tag'>[[item]]</span>
                 </template>
             </div>
@@ -61,7 +65,7 @@ class psGallery extends PolymerElement {
                         <p>[[item.description]]</p>
                         <p>
                             <template is="dom-repeat" items="[[splitTags(item.tag)]]">
-                                <span>[[item]]</span>
+                                <span class="tag">[[item]]</span>
                             </template>
                         </p>
                     </figure>
@@ -83,6 +87,11 @@ class psGallery extends PolymerElement {
     splitTags(string){
         let arr = string.split('|');
         return arr;
+    }
+    uniqueTags(array){
+        let uniques = new Set(array);
+        let uniqArr = [...uniques];
+        return uniqArr;
     }
     constructor(){
         super();
