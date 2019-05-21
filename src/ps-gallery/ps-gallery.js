@@ -54,8 +54,9 @@ class psGallery extends PolymerElement {
             last-response="{{ajaxResponse}}"
             ></iron-ajax>
             <div class='container'>
+                    <span class='tag' onclick="filterByTags">All</span>
                 <template is="dom-repeat" items="[[uniqueTags(ajaxResponse.columns.tag)]]" index-as='j'>
-                    <span class='tag'>[[item]]</span>
+                    <span class='tag' onclick="filterByTags(this)" data-tag="[[item]]">[[item]]</span>
                 </template>
             </div>
             <div class='container'>
@@ -65,7 +66,7 @@ class psGallery extends PolymerElement {
                         <p>[[item.description]]</p>
                         <p>
                             <template is="dom-repeat" items="[[splitTags(item.tag)]]">
-                                <span class="tag">[[item]]</span>
+                                <span class="tag" onclick="filterByTags(this)" data-tag="[[item]]">[[item]]</span>
                             </template>
                         </p>
                     </figure>
@@ -93,8 +94,20 @@ class psGallery extends PolymerElement {
         let uniqArr = [...uniques];
         return uniqArr;
     }
+    filterByTags(){
+        //didn't work as expected
+        // couldn't figure out how to use e.composedPath to get properties
+        // console.log('click');
+    }
     constructor(){
         super();
+        // let tags = document.querySelectorAll("span[data-tag]");
+        // for (var x = 0; x < tags.length; x++) {
+        //     tags[x].addEventListener("click", function (e) {
+        //         console.log('tag clicked');
+        //         console.log(e.composedPath[0]);
+        //     });
+        // }
     }
 }
 
