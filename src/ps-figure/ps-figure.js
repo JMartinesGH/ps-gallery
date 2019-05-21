@@ -65,8 +65,7 @@ class PsFigure extends PolymerElement {
     }
     tagString(string){
         let arr = string.split('|');
-        let newString = arr.toString();
-        return newString;
+        return arr.toString();
     }
 }
 

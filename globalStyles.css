@@ -1,0 +1,32 @@
+.overlay{
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+}
+
+.overlay:after{
+    content: "Click Image To Close";
+    color: white;
+    position: absolute;
+    padding: 5px;
+    z-index: 10;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+}
+
+.overlay img{
+    position: absolute;
+    max-width: 90%;
+    max-height: 90%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

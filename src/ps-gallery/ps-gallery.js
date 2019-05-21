@@ -39,7 +39,7 @@ class psGallery extends PolymerElement {
             <div class='container'>
                     <span class='tag' onclick="filterByTags">All</span>
                 <template is="dom-repeat" items="[[uniqueTags(ajaxResponse.columns.tag)]]" index-as='j'>
-                    <span class='tag' onclick="filterByTags(this)" data-tag="[[item]]">[[item]]</span>
+                    <span class='tag' onclick="filterByTags(this)">[[item]]</span>
                 </template>
             </div>
             <div class='container'>
