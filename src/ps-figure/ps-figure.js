@@ -45,6 +45,7 @@ class PsFigure extends PolymerElement {
         <figure data-tags$="{{tagString(item.tag)}}">
             <img src="[[item.image]]" alt="[[item.description]]" onclick="zoom(this)" onerror="this.onerror=null;this.src='https://placekitten.com/350/280';">
             <p>[[item.description]]</p>
+            <p>[[item.date]]</p>
             <p>
                 <template is="dom-repeat" items="[[splitTags(item.tag)]]">
                     <span class="tag" onclick="filterByTags([[item]])">[[item]]</span>
