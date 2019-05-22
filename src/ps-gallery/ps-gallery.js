@@ -22,8 +22,11 @@ class psGallery extends PolymerElement {
                 span.tag{
                     color: white;
                     background: #ccc;
-                    border-radius: 15px;
-                    padding: 5px;
+                    border-radius: 20px;
+                    padding: 2px 5px;
+                    margin: 3px;
+                    display: inline-block;
+                    line-height: 20px;
                 }
                 span.tag:hover{
                     background: #ff5200;

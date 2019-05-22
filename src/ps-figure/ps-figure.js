@@ -13,33 +13,48 @@ class PsFigure extends PolymerElement {
         }
         img{
             width: 100%;
-            height: 280px;
+            height: 248px;
             object-fit: cover;
             cursor: pointer;
         }
         figure{
             display: inline-block;
-            width: 360px;
+            width: 320px;
             min-height: 400px;
             vertical-align: top;
-            margin: 20px;
+            margin: 20px 0;
             box-shadow: 0px 2px 5px grey;
             border-top: 5px solid #ff5200;
         }
         figure p{
             margin: 10px 15px 20px;
             text-align: left;
+            word-wrap: break-word;
         }
         figure span,
         span.tag{
             color: white;
             background: #ccc;
-            border-radius: 15px;
-            padding: 5px;
+            border-radius: 20px;
+            padding: 2px 5px;
+            margin: 3px;
+            display: inline-block;
+            line-height: 20px;
         }
         span.tag:hover{
             background: #ff5200;
             cursor: pointer;
+        }
+
+        @media screen and (min-width: 768px){
+            figure{
+                width: 360px;
+                min-height: 400px;
+                margin: 20px;
+            }
+            img{
+                height: 280px;
+            }
         }
         </style>
         <figure data-tags$="{{tagString(item.tag)}}">
